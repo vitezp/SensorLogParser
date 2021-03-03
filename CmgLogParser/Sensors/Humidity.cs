@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Linq;
 using System.Threading.Tasks;
+using CmgLogParser.Domain;
 
 namespace CmgLogParser.Sensors
 {
-    public class Humidity : Sensor
+    public class Humidity : Sensor<double>
     {
         public Humidity(string name, double reference)
         {
@@ -17,16 +18,24 @@ namespace CmgLogParser.Sensors
             return Task.Run(() =>
             {
                 var values = Entries.Select(m => m.Value).ToList();
-                var average = values.Average();
-                if (Math.Abs(average - Reference) > 1)
-                {
-                    Result = "discard";
-                    return Result;
-                }
+                var matchesCriteria = values.All(m => Math.Abs(m - Reference) <= 1.0);
 
-                Result = "keep";
+                Result = matchesCriteria ? "keep" : "discard";
+                Console.WriteLine($"executing {Name}");
+
                 return Result;
             });
+        }
+
+        public override bool TryAddEntry(DateTime date, string value)
+        {
+            var success = double.TryParse(value, out var parsed);
+            if (success)
+            {
+                Entries.Add(new Entry<double>(date, parsed));
+            }
+
+            return success;
         }
     }
 }

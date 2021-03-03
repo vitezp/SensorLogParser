@@ -1,19 +1,54 @@
-﻿namespace CmgLogParser.Console.Models
+﻿using System;
+using System.Linq;
+using System.Threading;
+using System.Threading.Tasks;
+using CmgLogParser.Domain;
+
+namespace CmgLogParser.Sensors
 {
-    public abstract class Device
+    public class Thermometer : Sensor<double>
     {
-        public string Name { get; set; }
-    }
+        public Thermometer(string name, double reference)
+        {
+            Name = name;
+            Reference = reference;
+        }
 
-    public class Thermometer : Device
-    {
-    }
+        public override Task<string> Evaluate()
+        {
+            return Task.Run(() =>
+            {
+                var values = Entries.Select(m => m.Value).ToList();
+                var average = values.Average();
+                if (Math.Abs(average - Reference) > 0.5)
+                {
+                    Result = "precise";
+                    return Result;
+                }
 
-    public class Humidity : Device
-    {
-    }
+                var stdDev = Math.Sqrt(values.Sum(d => (d - average) * (d - average)) / values.Count);
+                Result = stdDev switch
+                {
+                    <= 3.0 => "ultra precise",
+                    <= 5.0 => "very precise",
+                    _ => "precise"
+                };
+                Thread.Sleep(TimeSpan.FromSeconds(5));
+                Console.WriteLine($"executed {Name}");
 
-    public class Monoxide : Device
-    {
+                return Result;
+            });
+        }
+
+        public override bool TryAddEntry(DateTime date, string value)
+        {
+            var success = double.TryParse(value, out var parsed);
+            if (success)
+            {
+                Entries.Add(new Entry<double>(date, parsed));
+            }
+
+            return success;
+        }
     }
 }

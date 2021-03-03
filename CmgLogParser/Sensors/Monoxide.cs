@@ -1,12 +1,14 @@
 ﻿using System;
 using System.Linq;
+using System.Threading;
 using System.Threading.Tasks;
+using CmgLogParser.Domain;
 
 namespace CmgLogParser.Sensors
 {
-    public class Monoxide : Sensor
+    public class Monoxide : Sensor<int>
     {
-        public Monoxide(string name, double reference)
+        public Monoxide(string name, int reference)
         {
             Name = name;
             Reference = reference;
@@ -17,16 +19,25 @@ namespace CmgLogParser.Sensors
             return Task.Run(() =>
             {
                 var values = Entries.Select(m => m.Value).ToList();
-                var average = values.Average();
-                if (Math.Abs(average - Reference) > 0.5)
-                {
-                    Result = "precise";
-                    return "precise";
-                }
 
-                var sum = values.Sum(d => (d - average) * (d - average));
-                Result = Math.Sqrt(sum / values.Count) <= 3 ? "ultra precise" : "very precise";
+
+                var matchesCriteria = values.All(m => Math.Abs(m - Reference) <= 3.0);
+
+                Result = matchesCriteria ? "keep" : "discard";
+                Console.WriteLine($"executed {Name}");
                 return Result;
-            });        }
+            });
+        }
+        
+        public override bool TryAddEntry(DateTime date, string value)
+        {
+            var success = int.TryParse(value, out var parsed);
+            if (success)
+            {
+                Entries.Add(new Entry<int>(date, parsed));
+            }
+
+            return success;
+        }
     }
 }

@@ -1,23 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using CmgLogParser.Domain;
 
 namespace CmgLogParser.Sensors
 {
-    public abstract class Sensor
+    public abstract class Sensor<T> : ISensor where T : IComparable<T>
     {
         public string Name { get; set; }
-        public double Reference { get; set; }
+        protected T Reference { get; set; }
 
-        protected List<Entry> Entries { get; set; } = new List<Entry>();
+        protected List<Entry<T>> Entries { get; set; } = new();
 
         public string Result { get; set; }
 
-        public void AddEntry(DateTime date, string value)
-        {
-            Entries.Add(new Entry(date, value));
-        }
-
         public abstract Task<string> Evaluate();
+
+        public abstract bool TryAddEntry(DateTime date, string value);
     }
 }

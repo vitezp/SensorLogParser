@@ -1,4 +1,5 @@
 ﻿using System;
+using CmgLogParser.Domain;
 
 namespace CmgLogParser.Sensors
 {
@@ -12,7 +13,7 @@ namespace CmgLogParser.Sensors
         }
 
         //consider try get sensor
-        public Sensor GetSensor(string? line)
+        public ISensor GetSensor(string? line)
         {
             //todo validation
             var record = line.Split(" ");
@@ -23,14 +24,14 @@ namespace CmgLogParser.Sensors
                 case "humidity":
                     return new Humidity(record[1], double.Parse(_referenceValues[1]));
                 case "monoxide":
-                    return new Monoxide(record[1], double.Parse(_referenceValues[2]));
+                    return new Monoxide(record[1], int.Parse(_referenceValues[2]));
             }
 
             // Invalid sensor definition 
             throw new ApplicationException();
         }
 
-        public bool TryGetSensor(string? line, out Sensor sensor)
+        public bool TryGetSensor(string? line, out ISensor sensor)
         {
             //init default sensor 
             sensor = null;
@@ -40,23 +41,23 @@ namespace CmgLogParser.Sensors
                 switch (record[0])
                 {
                     case "thermometer":
-                        sensor = new Thermometer(record[1],double.Parse(_referenceValues[0]));
+                        sensor = new Thermometer(record[1], double.Parse(_referenceValues[1]));
                         return true;
                     case "humidity":
-                        sensor = new Thermometer(record[1],double.Parse(_referenceValues[1]));
+                        sensor = new Humidity(record[1], double.Parse(_referenceValues[2]));
                         return true;
-        
                     case "monoxide":
-                        sensor = new Thermometer(record[1],double.Parse(_referenceValues[2]));
+                        sensor = new Monoxide(record[1], int.Parse(_referenceValues[3]));
                         return true;
+                    default:
+                        throw new ApplicationException($"Sensor type with name {record[0]} not available");
                 }
             }
             catch (Exception e)
             {
+                Console.WriteLine(e);
                 return false;
             }
-        
-            return false;
         }
     }
 }

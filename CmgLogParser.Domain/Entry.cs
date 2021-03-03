@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace CmgLogParser.Sensors
+namespace CmgLogParser.Domain
 {
     public class Entry<T> where T : IComparable<T>
     {

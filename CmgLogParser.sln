@@ -1,6 +1,12 @@
-﻿
+
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CmgLogParser", "CmgLogParser\CmgLogParser.csproj", "{8267A198-0294-4068-AFA9-4C07B0B5174A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CmgLogParser.Console", "CmgLogParser.Console\CmgLogParser.Console.csproj", "{8267A198-0294-4068-AFA9-4C07B0B5174A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CmgLogParser.Tests", "CmgLogParser.Tests\CmgLogParser.Tests.csproj", "{30A50C84-6BF3-43C1-8628-1A28955AC3B2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CmgLogParser", "CmgLogParser\CmgLogParser.csproj", "{8BC5930E-01DD-4026-81A5-E792441B87C7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CmgLogParser.Domain", "CmgLogParser.Domain\CmgLogParser.Domain.csproj", "{7666E6FD-DF91-4D7A-A672-CA16E78F2DBC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -12,5 +18,21 @@ Global
 		{8267A198-0294-4068-AFA9-4C07B0B5174A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8267A198-0294-4068-AFA9-4C07B0B5174A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8267A198-0294-4068-AFA9-4C07B0B5174A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{30A50C84-6BF3-43C1-8628-1A28955AC3B2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{30A50C84-6BF3-43C1-8628-1A28955AC3B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{30A50C84-6BF3-43C1-8628-1A28955AC3B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{30A50C84-6BF3-43C1-8628-1A28955AC3B2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8BC5930E-01DD-4026-81A5-E792441B87C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8BC5930E-01DD-4026-81A5-E792441B87C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8BC5930E-01DD-4026-81A5-E792441B87C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8BC5930E-01DD-4026-81A5-E792441B87C7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0F029741-E677-40DA-A3FE-854EFBFA2927}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0F029741-E677-40DA-A3FE-854EFBFA2927}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0F029741-E677-40DA-A3FE-854EFBFA2927}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0F029741-E677-40DA-A3FE-854EFBFA2927}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7666E6FD-DF91-4D7A-A672-CA16E78F2DBC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7666E6FD-DF91-4D7A-A672-CA16E78F2DBC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7666E6FD-DF91-4D7A-A672-CA16E78F2DBC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7666E6FD-DF91-4D7A-A672-CA16E78F2DBC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

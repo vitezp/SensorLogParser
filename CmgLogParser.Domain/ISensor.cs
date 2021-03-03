@@ -1,13 +1,13 @@
 ﻿using System;
 using System.Threading.Tasks;
 
-namespace CmgLogParser.Sensors
+namespace CmgLogParser.Domain
 {
     public interface ISensor
     {
         string Name { get; set; }
         string Result { get; set; }
         Task<string> Evaluate();
-        void AddEntry(DateTime date, string value);
+        bool TryAddEntry(DateTime date, string value);
     }
 }
