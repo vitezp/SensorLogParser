@@ -25,28 +25,28 @@
     </ItemGroup>
 
     <ItemGroup>
-      <None Update="TestInputs\Assignment_Log.txt">
+      <None Update="TestInputs/Assignment_Log.txt">
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </None>
-      <None Update="TestInputs\Assignment_Result.txt">
+      <None Update="TestInputs/Assignment_Result.txt">
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </None>
-      <None Update="TestInputs\LargeThermometer_Log.txt">
+      <None Update="TestInputs/LargeThermometer_Log.txt">
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </None>
-      <None Update="TestInputs\LargeThermometer_Result.txt">
+      <None Update="TestInputs/LargeThermometer_Result.txt">
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </None>
-      <None Update="TestInputs\LargeMonoxide_Log.txt">
+      <None Update="TestInputs/LargeMonoxide_Log.txt">
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </None>
-      <None Update="TestInputs\LargeMonoxide_Result.txt">
+      <None Update="TestInputs/LargeMonoxide_Result.txt">
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </None>
-      <None Update="TestInputs\LargeHumidity_Log.txt">
+      <None Update="TestInputs/LargeHumidity_Log.txt">
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </None>
-      <None Update="TestInputs\LargeHumidity_Result.txt">
+      <None Update="TestInputs/LargeHumidity_Result.txt">
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </None>
     </ItemGroup>
