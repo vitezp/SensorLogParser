@@ -1,0 +1,22 @@
+{
+  "mon-0": "discard",
+  "mon-1": "discard",
+  "mon-2": "discard",
+  "mon-3": "discard",
+  "mon-4": "discard",
+  "mon-5": "discard",
+  "mon-6": "discard",
+  "mon-7": "discard",
+  "mon-8": "discard",
+  "mon-9": "discard",
+  "mon-10": "keep",
+  "mon-11": "keep",
+  "mon-12": "keep",
+  "mon-13": "keep",
+  "mon-14": "keep",
+  "mon-15": "keep",
+  "mon-16": "keep",
+  "mon-17": "keep",
+  "mon-18": "keep",
+  "mon-19": "keep"
+}

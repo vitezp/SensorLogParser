@@ -1,0 +1,22 @@
+{
+  "hum-0": "discard",
+  "hum-1": "keep",
+  "hum-2": "discard",
+  "hum-3": "keep",
+  "hum-4": "discard",
+  "hum-5": "discard",
+  "hum-6": "keep",
+  "hum-7": "keep",
+  "hum-8": "discard",
+  "hum-9": "discard",
+  "hum-10": "keep",
+  "hum-11": "keep",
+  "hum-12": "keep",
+  "hum-13": "discard",
+  "hum-14": "keep",
+  "hum-15": "keep",
+  "hum-16": "discard",
+  "hum-17": "keep",
+  "hum-18": "discard",
+  "hum-19": "discard"
+}

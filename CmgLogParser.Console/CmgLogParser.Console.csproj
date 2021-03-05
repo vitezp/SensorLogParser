@@ -7,16 +7,13 @@
 
     <ItemGroup>
       <ProjectReference Include="..\CmgLogParser\CmgLogParser.csproj" />
+      <ProjectReference Include="..\CmgLogProducer\CmgLogProducer.csproj" />
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="TestInputs" />
-    </ItemGroup>
-
-    <ItemGroup>
-      <None Update="UnparsedLog.txt">
-        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      </None>
+      <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="7.1.0" />
+      <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="5.0.1" />
+      <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="5.0.0" />
     </ItemGroup>
 
 </Project>

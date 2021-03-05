@@ -1,30 +1,40 @@
 ﻿using System;
 using System.Linq;
+using System.Threading;
 using System.Threading.Tasks;
 using CmgLogParser.Domain;
+using CmgLogParser.Domain.Enums;
 
 namespace CmgLogParser.Sensors
 {
     public class Humidity : Sensor<double>
     {
-        public Humidity(string name, double reference)
+        private readonly double _threshold;
+
+        public Humidity(string name, double reference, double threshold = 1.0)
         {
             Name = name;
             Reference = reference;
+            SensorType = SensorType.Humidity;
+            _threshold = threshold;
         }
 
-        public override Task<string> Evaluate()
+        public override Task Evaluate(CancellationToken ct)
         {
             return Task.Run(() =>
             {
                 var values = Entries.Select(m => m.Value).ToList();
-                var matchesCriteria = values.All(m => Math.Abs(m - Reference) <= 1.0);
+                if (values.Count == 0)
+                {
+                    Result = Result.NoData;
+                    return;
+                }
 
-                Result = matchesCriteria ? "keep" : "discard";
+                var matchesCriteria = values.All(m => Math.Abs(m - Reference) <= _threshold);
+
+                Result = matchesCriteria ? Result.Keep : Result.Discard;
                 Console.WriteLine($"executing {Name}");
-
-                return Result;
-            });
+            }, ct);
         }
 
         public override bool TryAddEntry(DateTime date, string value)

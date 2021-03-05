@@ -1,0 +1,22 @@
+{
+  "therm-0": "precise",
+  "therm-1": "precise",
+  "therm-2": "precise",
+  "therm-3": "ultra precise",
+  "therm-4": "precise",
+  "therm-5": "ultra precise",
+  "therm-6": "precise",
+  "therm-7": "precise",
+  "therm-8": "ultra precise",
+  "therm-9": "precise",
+  "therm-10": "ultra precise",
+  "therm-11": "ultra precise",
+  "therm-12": "precise",
+  "therm-13": "ultra precise",
+  "therm-14": "ultra precise",
+  "therm-15": "ultra precise",
+  "therm-16": "ultra precise",
+  "therm-17": "ultra precise",
+  "therm-18": "ultra precise",
+  "therm-19": "precise"
+}
