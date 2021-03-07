@@ -6,7 +6,7 @@ using CmgLogParser.Domain.Enums;
 using FluentAssertions;
 using Xunit;
 
-namespace CmgLogParser.Tests
+namespace CmgLogParser.UnitTests
 {
     public class LogParserGeneralTests
     {
@@ -107,8 +107,8 @@ namespace CmgLogParser.Tests
         public void Input(string input, string result)
         {
             // Arrange
-            var inputData = File.ReadAllText(Directory.GetCurrentDirectory() + "\\TestInputs\\" + input);
-            var resultData = File.ReadAllText(Directory.GetCurrentDirectory() + "\\TestInputs\\" + result);
+            var inputData = File.ReadAllText(Directory.GetCurrentDirectory() + "/TestInputs/" + input);
+            var resultData = File.ReadAllText(Directory.GetCurrentDirectory() + "/TestInputs/" + result);
 
             // Act
             var parsed = ILogParser.EvaluateLogFile(inputData);

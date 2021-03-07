@@ -23,8 +23,8 @@ namespace CmgLogParser.Console
             sw.Stop();
             System.Console.WriteLine($"{sw.Elapsed}");
 
-            //File.WriteAllText("c:\\CODE\\Excercises\\Rider\\CmgLogParser\\CmgLogParser.Tests\\TestInputs\\LargeMonoxide_Log2.txt", produced);
-            //File.WriteAllText("c:\\CODE\\Excercises\\Rider\\CmgLogParser\\CmgLogParser.Tests\\TestInputs\\LargeMonoxide_Result2.txt", result);
+            //File.WriteAllText("c:\\CODE\\Excercises\\Rider\\CmgLogParser\\CmgLogParser.UnitTests\\TestInputs\\LargeMonoxide_Log2.txt", produced);
+            //File.WriteAllText("c:\\CODE\\Excercises\\Rider\\CmgLogParser\\CmgLogParser.UnitTests\\TestInputs\\LargeMonoxide_Result2.txt", result);
         }
     }
 }

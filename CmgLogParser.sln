@@ -1,8 +1,8 @@
-﻿
+
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CmgLogParser.Console", "CmgLogParser.Console\CmgLogParser.Console.csproj", "{8267A198-0294-4068-AFA9-4C07B0B5174A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CmgLogParser.Tests", "CmgLogParser.Tests\CmgLogParser.Tests.csproj", "{30A50C84-6BF3-43C1-8628-1A28955AC3B2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CmgLogParser.UnitTests", "CmgLogParser.UnitTests\CmgLogParser.UnitTests.csproj", "{30A50C84-6BF3-43C1-8628-1A28955AC3B2}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CmgLogParser", "CmgLogParser\CmgLogParser.csproj", "{8BC5930E-01DD-4026-81A5-E792441B87C7}"
 EndProject

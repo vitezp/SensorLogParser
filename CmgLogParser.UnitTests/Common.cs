@@ -2,7 +2,7 @@
 using System.Text.Json;
 using CmgLogParser.Domain.Enums;
 
-namespace CmgLogParser.Tests
+namespace CmgLogParser.UnitTests
 {
     public static class Common
     {

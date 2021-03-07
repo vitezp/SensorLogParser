@@ -6,7 +6,7 @@ using CmgLogParser.Domain.Enums;
 using FluentAssertions;
 using Xunit;
 
-namespace CmgLogParser.Tests
+namespace CmgLogParser.UnitTests
 {
     public class ThermometerTests
     {

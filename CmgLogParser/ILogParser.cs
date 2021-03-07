@@ -7,10 +7,15 @@ using CmgLogParser.Domain;
 
 namespace CmgLogParser
 {
-    //suggestion for improvement of Logformat
-    //  - each line has first entry specification whether it's entry or sensor name or reference
+    // Suggestion for improvement of LogFormat
+    //  - Each line has first entry specification whether it's entry or sensor name or reference
+    //  - Would be nice to have a reader that reads the log line by line. This could be connected to e.g. Message bus, 
+    //    processing and analyzing all the logs/devices in real time. 
     public interface ILogParser
     {
+        
+        // This better be a non-static method so there is option to have multiple implementations, inject it to the
+        // DI container. Better test, etc. Having is static is a restriction given in the assignment :(
         public static string EvaluateLogFile(string logContentsStr)
         {
             using TextReader sr = new StringReader(logContentsStr);

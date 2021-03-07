@@ -3,23 +3,24 @@ using CmgLogParser.Domain.Enums;
 using FluentAssertions;
 using Xunit;
 
-namespace CmgLogParser.Tests
+namespace CmgLogParser.UnitTests
 {
-    public class MonoxideTests
+    public class Humidity
     {
         [Theory]
-        [InlineData(45, 45, "m1", Result.Keep)]
-        [InlineData(6, 9, "m2", Result.Keep)]
-        [InlineData(-2, 1, "m3", Result.Keep)]
-        [InlineData(6, 11, "m4", Result.Discard)]
-        [InlineData(6, -1, "m5", Result.Discard)]
-        public void EvaluateLogFile_ShouldReadMonoxideData_WhenTheLogfileIsValid(double reference, double value,
+        [InlineData(45, 45, "h1", Result.Keep)]
+        [InlineData(6.6, 6.3, "h2", Result.Keep)]
+        [InlineData(2.2, 3.2, "h3", Result.Keep)]
+        [InlineData(-2.2, -3.1, "h4", Result.Keep)]
+        [InlineData(6, 7.1, "h5", Result.Discard)]
+        [InlineData(6, 12, "h6", Result.Discard)]
+        public void EvaluateLogFile_ShouldReadHumidityData_WhenTheLogfileIsValid(double reference, double value,
             string name, Result result)
         {
             // Arrange
             var sb = new StringBuilder();
             sb.AppendFormat(Common.ReferenceFormat, reference);
-            sb.AppendFormat(Common.SensorFormat, SensorType.Monoxide, name);
+            sb.AppendFormat(Common.SensorFormat, SensorType.Humidity, name);
             sb.AppendFormat(Common.RecordFormat, value);
             var expected = Common.FormatResult(name, result);
 
