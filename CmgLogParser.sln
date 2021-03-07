@@ -1,4 +1,4 @@
-
+﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CmgLogParser.Console", "CmgLogParser.Console\CmgLogParser.Console.csproj", "{8267A198-0294-4068-AFA9-4C07B0B5174A}"
 EndProject

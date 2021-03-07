@@ -13,7 +13,6 @@ namespace CmgLogParser
     //    processing and analyzing all the logs/devices in real time. 
     public interface ILogParser
     {
-        
         // This better be a non-static method so there is option to have multiple implementations, inject it to the
         // DI container. Better test, etc. Having is static is a restriction given in the assignment :(
         public static string EvaluateLogFile(string logContentsStr)
@@ -53,13 +52,14 @@ namespace CmgLogParser
 
                 if (valid) continue;
 
-                Console.WriteLine($"evaluating {sensor.Name}");
+                // todo this should be logged using logger. Commenting out 
+                //Console.WriteLine($"evaluating {sensor.Name}");
                 tasks.Add(sensor.Evaluate(CancellationToken.None));
                 sensors.Add(sensor);
                 valid = sensorFactory.TryGetSensor(line, out sensor);
             }
 
-            Console.WriteLine("exiting");
+            //Console.WriteLine("exiting");
 
             Task.WaitAll(tasks.ToArray());
 
