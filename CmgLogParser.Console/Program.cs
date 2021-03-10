@@ -95,7 +95,7 @@ namespace CmgLogParser.Console
         {
             var a =
                 Path.Combine(
-                    Directory.GetParent(Environment.CurrentDirectory)?.Parent?.Parent?.Parent?.FullName ??
+                    Environment.CurrentDirectory ??
                     throw new InvalidOperationException("Directory does not exist"),
                     "logFilesToAnalyze");
             return a;

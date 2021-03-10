@@ -4,8 +4,19 @@
 
 The project uses .NET Core 5.0
 
+
 ## Getting started
-To build the solution
+
+### Build in Docker
+
+```
+$ docker build -t sensor-log-parser -f Dockerfile .
+$ docker run -it sensor-log-parser
+```
+
+### Build on local environment
+
+Requires dotnet sdk 5.0 
 ```
 $ dotnet build
 ```
@@ -67,4 +78,3 @@ random log file for functionality checking and performance tuning purposes.
 the implementation in the interface itself which is super nasty. </br>
 -Define the method that takes reader as oppose to string to continuously analyze logs and post the result.<br>
 -Change format of the log-files. Consider using csv. First character on each line specifying type of line, whether it's logEntry or reference or sensor definition.
--Dockerize project </br>
